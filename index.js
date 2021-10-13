@@ -15,6 +15,13 @@ let app = express();
 //database
 require("./db");
 
+app.get("/", (req, res, next) => {
+  res.send({
+    res: true,
+    msg: "Server running",
+  });
+});
+
 //all the middlewares
 app.use(cors({}));
 app.use(helmet());
